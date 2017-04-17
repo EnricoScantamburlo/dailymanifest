@@ -87,7 +87,7 @@ public class UpdateManifestTask extends Task {
     }
     private static final String PROP_SPEC_VERSION_BASE = "spec.version.base";
 
-    private static final DateTimeFormatter DATE_FORMATTER2 = DateTimeFormatter.ofPattern("yyyy.MM.ddHHmmss", Locale.US);
+    private static final DateTimeFormatter DATE_FORMATTER2 = DateTimeFormatter.ofPattern("yyyy.MMdd.HHmmss", Locale.US);
 
     // Not very good looking
     protected String updateManifest2(String original, LocalDateTime now) {
