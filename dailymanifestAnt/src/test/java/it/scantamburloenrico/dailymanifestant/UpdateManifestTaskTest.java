@@ -1,12 +1,8 @@
 package it.scantamburloenrico.dailymanifestant;
 
 import java.time.LocalDateTime;
-import org.junit.After;
-import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -14,25 +10,6 @@ import org.junit.Test;
  * @author Enrico Scantamburlo <scantamburlo at streamsim.com>
  */
 public class UpdateManifestTaskTest {
-
-    public UpdateManifestTaskTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of updateManifest method, of class UpdateManifestTask.
@@ -47,6 +24,27 @@ public class UpdateManifestTaskTest {
         String result = instance.updateManifest(original, now);
         assertNotNull("null", result);
         assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testIncreaseManifest() {
+        System.out.println("updateManifest");
+        {
+            String original = "1.0.0";
+            UpdateManifestTask instance = new UpdateManifestTask();
+            String result = instance.increaseManifest(original);
+            assertNotNull("null", result);
+            String expResult = "1.0.1";
+            assertEquals(expResult, result);
+        }
+        {
+            String original = "2.0";
+            UpdateManifestTask instance = new UpdateManifestTask();
+            String result = instance.increaseManifest(original);
+            assertNotNull("null", result);
+            String expResult = "2.1";
+            assertEquals(expResult, result);
+        }
     }
 
 }

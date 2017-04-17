@@ -8,3 +8,5 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 /dailymanifestAnt/nbproject/
+/testModule/nbproject/private/
+/testModule/build/
